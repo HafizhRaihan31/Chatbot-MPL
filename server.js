@@ -7,18 +7,22 @@ import chatRoute from "./routes/chat.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Fix path dirname
+// Fix dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Helper untuk baca file JSON
+// Middleware JSON harus sebelum routes
+app.use(express.json());
+
+// Helper JSON reader
 const readJSON = (filename) => {
   const filePath = path.join(__dirname, "data", filename);
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 };
 
-// API routes ===========================
+// API ROUTES =============================
+
 app.get("/", (req, res) => {
   res.send("MPL Chatbot API is running...");
 });
@@ -47,10 +51,10 @@ app.get("/api/teams-detail", (req, res) => {
   res.json(data);
 });
 
-// Jalankan API ==========================
+// Chatbot Route (HARUS sebelum listen)
+app.use("/api/chat", chatRoute);
+
+// Start Server ==========================
 app.listen(PORT, () => {
   console.log(`🚀 API berjalan di port ${PORT}`);
 });
-
-app.use(express.json());
-app.use("/api/chat", chatRoute);
