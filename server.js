@@ -2,6 +2,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import cors from "cors";  // <-- Tambahkan CORS
 import { fileURLToPath } from "url";
 import chatRoute from "./routes/chat.js";
 
@@ -10,12 +11,16 @@ dotenv.config(); // WAJIB agar GEMINI_API_KEY terbaca
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Fix dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// ENABLE CORS ===========================
+app.use(cors({ origin: "*" }));  
+// bisa juga: origin: ["http://localhost:5500", "https://domainmu.com"]
 
 // Middleware JSON
 app.use(express.json());
+
+// Fix dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Helper JSON reader
 const readJSON = (filename) => {
@@ -28,7 +33,8 @@ const readJSON = (filename) => {
   }
 };
 
-// API ROUTES
+// API ROUTES =============================
+
 app.get("/", (req, res) => {
   res.send("MPL Chatbot API is running on Railway 🚀");
 });
