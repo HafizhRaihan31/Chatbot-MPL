@@ -1,0 +1,207 @@
+/* ----------------------------------------------------------------
+	Fonts
+
+	Replace your Fonts as necessary
+-----------------------------------------------------------------*/
+
+
+/* HEADING */
+@font-face {
+    font-family: 'glorynight';
+    src: url('../fonts/glorynight_tall-webfont.woff2') format('woff2'),
+         url('../fonts/glorynight_tall-webfont.woff') format('woff'),
+         url('../fonts/glorynight_tall-webfont.ttf') format('truetype');
+}
+
+/* BODY */
+@font-face {
+    font-family: 'bebasneue';
+    src: url('../fonts/bebasneue_book-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_book-webfont.woff') format('woff'),
+         url('../fonts/bebasneue_book-webfont.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Origin Super Condensed';
+    src: url('../fonts/OriginSuperCondensed-UltraLight.woff2') format('woff2'),
+        url('../fonts/OriginSuperCondensed-UltraLight.woff') format('woff'),
+        url('../fonts/OriginSuperCondensed-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Origin Super Condensed';
+    src: url('../fonts/OriginSuperCondensed-Light.woff2') format('woff2'),
+        url('../fonts/OriginSuperCondensed-Light.woff') format('woff'),
+        url('../fonts/OriginSuperCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Origin Super Condensed';
+    src: url('../fonts/OriginSuperCondensed-Regular.woff2') format('woff2'),
+        url('../fonts/OriginSuperCondensed-Regular.woff') format('woff'),
+        url('../fonts/OriginSuperCondensed-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Origin Super Condensed';
+    src: url('../fonts/OriginSuperCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/OriginSuperCondensed-Bold.woff') format('woff'),
+        url('../fonts/OriginSuperCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Origin Super Condensed';
+    src: url('../fonts/OriginSuperCondensed-Black.woff2') format('woff2'),
+        url('../fonts/OriginSuperCondensed-Black.woff') format('woff'),
+        url('../fonts/OriginSuperCondensed-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaEXTRALIGHT.woff2') format('woff2'),
+        url('../fonts/AstoriaEXTRALIGHT.woff') format('woff'),
+        url('../fonts/AstoriaEXTRALIGHT.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaLight.woff2') format('woff2'),
+        url('../fonts/AstoriaLight.woff') format('woff'),
+        url('../fonts/AstoriaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaRoman.woff2') format('woff2'),
+        url('../fonts/AstoriaRoman.woff') format('woff'),
+        url('../fonts/AstoriaRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaMedium.woff2') format('woff2'),
+        url('../fonts/AstoriaMedium.woff') format('woff'),
+        url('../fonts/AstoriaMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaBold.woff2') format('woff2'),
+        url('../fonts/AstoriaBold.woff') format('woff'),
+        url('../fonts/AstoriaBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astoria';
+    src: url('../fonts/AstoriaExtraBold.woff2') format('woff2'),
+        url('../fonts/AstoriaExtraBold.woff') format('woff'),
+        url('../fonts/AstoriaExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NBA';
+    src: url('../fonts/action-nba-font/ActionNBA-Medium.woff2') format('woff2'),
+        url('../fonts/action-nba-font/ActionNBA-Medium.woff') format('woff'),
+        url('../fonts/action-nba-font/ActionNBA-Medium.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body,
+small,
+.sub-menu-container .menu-item > .menu-link,
+.wp-caption,
+.fbox-center.fbox-italic p,
+.skills li .progress-percent .counter,
+.nav-tree ul ul a,
+
+/* additional */
+.menu-link,
+.dd-option-text,
+.dd-selected-text,
+
+.font-body {
+    font-family: 'Astoria', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#logo a,
+/* .mega-menu-style-2 .mega-menu-title > .menu-link, */
+.top-search-form input,
+.entry-link,
+.entry.entry-date-section span,
+.button.button-desc,
+.fbox-content h3,
+.tab-nav-lg li a,
+.counter,
+label,
+.widget-filter-links li a,
+.nav-tree li a,
+.wedding-head,
+
+/* additional */
+.home-standings .team-rank,
+
+.font-primary {
+    font-family: 'Origin Super Condensed', sans-serif;
+}
+
+
+.entry-link span,
+.entry blockquote p,
+.more-link,
+.comment-content .comment-author span,
+.comment-content .comment-author span a,
+.button.button-desc span,
+.testi-content p,
+.team-title span,
+.before-heading,
+.wedding-head .first-name span,
+.wedding-head .last-name span,
+.font-secondary {
+    font-family: 'Astoria', serif;
+}

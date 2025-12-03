@@ -1,0 +1,47 @@
+[
+  {
+    "name": "AE",
+    "logo": "https://cdn.id-mpl.com/data/teams/ae-256.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T030813Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=75d369152876b9ae4449b6fed59a09156afb26dab993b6921db6dd2603552909",
+    "link": "https://id-mpl.com/team/ae"
+  },
+  {
+    "name": "BTR",
+    "logo": "https://cdn.id-mpl.com/season16/Logo/btr_vit.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T015817Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=9ad46db80045b0925514f6e26ed0d0b8e3965af198d7f9d950689fd104de2241",
+    "link": "https://id-mpl.com/team/btr"
+  },
+  {
+    "name": "DEWA",
+    "logo": "https://cdn.id-mpl.com/data/teams/dewa-united-500.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002450Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=83c80a847498c0abeafa30419021d0cfc7f91ecc849d708fceb947d915120edf",
+    "link": "https://id-mpl.com/team/dewa"
+  },
+  {
+    "name": "EVOS",
+    "logo": "https://cdn.id-mpl.com/data/teams/evos-500.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T051156Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=2c8f322c98dff5074829b97ba41b4207757c5155d7b9ade0033748e88f12ec6f",
+    "link": "https://id-mpl.com/team/evos"
+  },
+  {
+    "name": "GEEK",
+    "logo": "https://cdn.id-mpl.com/data/teams/geek-500.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T000933Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=afd0ec71a8e317ca9602572e4b01a6d5b9913a4b127b4b9966fca886fe1f00d3",
+    "link": "https://id-mpl.com/team/geek"
+  },
+  {
+    "name": "NAVI",
+    "logo": "https://cdn.id-mpl.com/season15/NAVI-2.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T015817Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=2318f275bad7119c1cd879a080d8d4114dc6fa78138a4c16e386cbfa40d169bd",
+    "link": "https://id-mpl.com/team/navi"
+  },
+  {
+    "name": "ONIC",
+    "logo": "https://cdn.id-mpl.com/data/teams/onic-b-256.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T032629Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=fe87150c3d6eeb5041b995992f25bcbb3808e0cb6c88cddd99b183c01847fcab",
+    "link": "https://id-mpl.com/team/onic"
+  },
+  {
+    "name": "RRQ",
+    "logo": "https://cdn.id-mpl.com/data/teams/rrq-500.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T000933Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=4cdd5b70131ef1e2656478e44dc8b5932900fce627c11ad91f1313f34de867d1",
+    "link": "https://id-mpl.com/team/rrq"
+  },
+  {
+    "name": "TLID",
+    "logo": "https://cdn.id-mpl.com/season14/Team/TLID-Primary500x500.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T000933Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=30b4581f6f29b9a620d552508b8981391f8e5a85a53583451f91faf04e545bb9",
+    "link": "https://id-mpl.com/team/tlid"
+  }
+]

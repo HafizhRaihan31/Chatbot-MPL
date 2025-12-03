@@ -1,0 +1,472 @@
+[
+  {
+    "team": "AE",
+    "players": [
+      {
+        "name": "XEPHER",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/XEPHER.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T041524Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=9d8cd7093682bc1d63105a9d6897224eb58a1fcf32fa4453053b004a981a5b97"
+      },
+      {
+        "name": "STYX",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/STYX.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T041524Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f2fb93242aa653341ae13e6e93cc2e8bbd771a60f086e36acc45c8e8c175afe1"
+      },
+      {
+        "name": "NINO",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/NINO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=af9c474c560726b12f6aa108c807393172e6787619c037c0b2a6ee0fa92dcafd"
+      },
+      {
+        "name": "ARFY",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/ARFY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=ab6acdbd6436f8c2a335ba9c0f32a90cc39d9b46daabe0a7bb78bc3e91251792"
+      },
+      {
+        "name": "ALEKK",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/ALEK.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=eacaa3dfab3e506a380f1106c727a33bdceab5b8c9b737983f098a81e043e0fc"
+      },
+      {
+        "name": "HIJUMEE",
+        "role": "MIDLANE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/HIJUME.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=50852ad5b7f7c27b18874300bd298fe4ad2f975f5aa62bba9fd771ea7bb890ee"
+      },
+      {
+        "name": "CYRUZ",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/CYRUZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T005138Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b292d86b2dc1c6438a3398d4185399aef0debba8a24d6bbeecb411e5afb7d72e"
+      },
+      {
+        "name": "RINEE",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/RINE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T005138Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b076fa02da3afd152dade9d7957856c8ddad111b756a5f3672fa12453326983c"
+      },
+      {
+        "name": "YAZUKEE",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/YAZUKE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=09f765aa26c0ec5a0cc640721cace6ed90e6a4f2022328047de69a524e1838d7"
+      },
+      {
+        "name": "IVANN",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/ae/IVAN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T005138Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=ff3395d40dfbdd78e2413c5f4eea96c9bc139fc13c8acb11c25711d81969f7e9"
+      }
+    ]
+  },
+  {
+    "team": "BTR",
+    "players": [
+      {
+        "name": "COACH ERPANG",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/ERPANG%201.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T042448Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=32da4f61ffcc2706d3ed4af80e6c9cf630eb386780cb25499207434edc8be06a"
+      },
+      {
+        "name": "COACH BAM",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/Coach%20Bam.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T042448Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=25109006527a26576b8b6e5e5a35f61ebee6f623c2e77b302c09baf9f76ff2a3"
+      },
+      {
+        "name": "BARBOSSA",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/BARBOSA.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T042448Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=418bfc3bac55823dcd67f0fb61846437b731e1c652765207966d5722a542d228"
+      },
+      {
+        "name": "MORENO",
+        "role": "MIDLANE",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/MORENO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f731d8d030e7502a6db21390f6850beef2c761c0c0eca9d75e00c81ecada5273"
+      },
+      {
+        "name": "EMANN",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/EMANN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=e4cc97757146a9efa8e841bc3288f86b603df7b87e20a31289121dc61ccdcae6"
+      },
+      {
+        "name": "FINN",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/FINN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=06b869bbef0246e245334d3de86ac2e729b31d1b3f7e83e8b631c11a7cba01cb"
+      },
+      {
+        "name": "NNAEL",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/NNAEL.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=1c76eca833e48d877cc9559f331959ad4c2a686ca548861935f492ae09f5431e"
+      },
+      {
+        "name": "SHOGUN",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/SHOGUN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=552b829d83ddfb8d09fcdd7915c4eea67791ac247a9fb83ce14a3039f1ab3d63"
+      },
+      {
+        "name": "RONN",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/btr/RONN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T012944Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b1206110d5eed5e39c76eb0fb0f6442334d4cff6b5b685907f5eb075eae71d25"
+      }
+    ]
+  },
+  {
+    "team": "DEWA UNITED",
+    "players": [
+      {
+        "name": "COACH RIGHT",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/COACH%20RIGHT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T052820Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=502218e6b3ef3a548ee8da23b20af6ce02836bbc625e33241fab1a487248c74a"
+      },
+      {
+        "name": "ACENG",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/ACENG.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T052820Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=3a30b09e6a2538f75b4a5313c33ad4405d82766c28a93ce357a2c37d3aab05b7"
+      },
+      {
+        "name": "MUEZZA",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/MUEZZA.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=6fbc480de7b076a6fac3c3f2cbc880688381d405f78c921f256fcfa673352713"
+      },
+      {
+        "name": "MAYBEEE",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/MAYBEEE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0c0bd26983c5ae4a0060267e67b49c45e1f67c39993cf5b489a55d8fb1ad4c6f"
+      },
+      {
+        "name": "VANZ",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/VANZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T014624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=8bf77ca83dfe2a74e2209f926653f4338b9e02863740837e8c86f2f114efda13"
+      },
+      {
+        "name": "REYY",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/REYY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=ca2a809859326e3b799dfa48988e48bab1cb569e21ab9c1be3f2c7df9b769482"
+      },
+      {
+        "name": "OCTA",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/OCTA.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=05bf160b1a376086a5b99bd2ba67d3e9cc31237b07ad4882ab396bed13b2366a"
+      },
+      {
+        "name": "MARKKK",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/MARKKK.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T014624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=360b1468e8b75b7034c85959085d3ab18a9d5940b5a6dec544476da3bff28754"
+      },
+      {
+        "name": "QINN",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/dewa/Qinn.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=caa564577677b2b131160c0c349c9bc122e7c5c183aea07b9f3d350f085fc4ee"
+      }
+    ]
+  },
+  {
+    "team": "EVOS",
+    "players": [
+      {
+        "name": "VYN",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/Vyn.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002614Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f31d4a6ae29cf497da2a556fcef966241da3f0b094c9d3b3d6dec888b05426cc"
+      },
+      {
+        "name": "BRAVO",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/BRAVO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002614Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=cc48fd9bdb76d3c60979cf8dbf23af2f60d51bfabbd9812ae51fbf35ad0d89fb"
+      },
+      {
+        "name": "KYY",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/KYY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=617168a448f3381d7153e12256af18d749bec804b4af0a21bac1b8874615b943"
+      },
+      {
+        "name": "ALBERTTT",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/ALBERTTT.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b03f90be38912dc242544124a1de0b321acf31bdcfd6ec0ee7268bcfc64c4f94"
+      },
+      {
+        "name": "ERLAN",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/ERLAN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=4e20b01577bb85a628beea39d92e5de5b4437f8525e11f1650a1574bfb8cfe44"
+      },
+      {
+        "name": "SWAYLOW",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/SWAYLOW.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010720Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=c6b78726bc953b089dfdd39fabca0585663438339509c531c7d00f4b3728ba7e"
+      },
+      {
+        "name": "BRANZ",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/BRANZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010720Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=345f6dd1f9d9fc622a8bb4628be9c4bbd53e544cae36872a6d799b528a79acdc"
+      },
+      {
+        "name": "ROUNDEL",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/ROUNDEL.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5309c57e53388b0e8143155d25b434a6796329ca662edd0a17f91870f5914d5a"
+      },
+      {
+        "name": "XORIZO",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/XORIZO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010720Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=47f732a82fb91c43098e60475ffcf34ee2cc66d4ca0fb24ea0e2533bd65943f7"
+      },
+      {
+        "name": "RENDYY",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/evos/RENDYY_MID.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=28ceca33a4cd6b2fa86eef4a2d761c3d5197398a3ea184b8b3b096167e414541"
+      }
+    ]
+  },
+  {
+    "team": "GEEK FAM",
+    "players": [
+      {
+        "name": "DORADSP",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/DORADSP.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001955Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=c490de7f4f963e6af96e96ef8d32b79e78973fa6c11ec0c5435deffbd8d80564"
+      },
+      {
+        "name": "BLUFFZY",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/BLUFFZY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001955Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=274712769899b9dbbd5a3365a2bb133112e88e6b1ab6f32e3db5af0494e189e6"
+      },
+      {
+        "name": "BALOYSKIE",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/BALOYSKIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001638Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=c8a3b6b3b835344af90e4e5c3f73e8a5649a6cdcfd92b607bafc6d4b43850dd6"
+      },
+      {
+        "name": "GOBS",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/GOBS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001638Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=800eddcdb9a3d049b3767347a82cb47a470bac43340325c341d2ce7d200e3ccc"
+      },
+      {
+        "name": "KENNZYYSKIE",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/KENNZYYSKIE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001638Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=c5dbf3c647d79614201a04507e8e039dca09324a57cff05871c8129bd80bfe7d"
+      },
+      {
+        "name": "ABOY",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/ABOY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001638Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=53bd35fb3e26951a5404a5b19799c20c95a9aa56ca6e0190f53c2368ce9fb425"
+      },
+      {
+        "name": "MAYKIDS",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/Maykids.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T001638Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a2e4a66d0f118a2d0f4af8005239946f281f1df57ed583f8ec4c9fab64fa0905"
+      },
+      {
+        "name": "ZELTRON",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/geek/ZELTRON.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T012944Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=e64b9eb9e9225af418db05aeddffee52b4993c4f8b7111233470aebca04e86a7"
+      }
+    ]
+  },
+  {
+    "team": "NAVI",
+    "players": [
+      {
+        "name": "DO",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/DO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T022351Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=cb8ca8720acac9745b684c0d1e7283379e6c9f487c8145e91da4c718b3e0e32e"
+      },
+      {
+        "name": "JACKLEE",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/Jacklee.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T022351Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=50c214c974d467ebf01155a841001b17445d590f724e44278a1a2dce9aee2654"
+      },
+      {
+        "name": "KARSS",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/KARSS.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=3b58c6f544a3fe025551f6604a7afdbb80ddf3f0102e37f0f655aa24f0372bf4"
+      },
+      {
+        "name": "XMAGIC",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/XMAGIC.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T020242Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=1fc17d081b9055fd6c040654373d9c1b1b1e136708f38f67cc1a76afe79a3f38"
+      },
+      {
+        "name": "WOSHIPAUL",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/WOSHIPAUL.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T020242Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a388582f6634c0f5248d38cda9f71aae9c843bc650643134782928f1b0c26d6a"
+      },
+      {
+        "name": "XYVE",
+        "role": "GOLDLANE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/XYVE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=7442dbfa65c6dfbf603c98fcee34cf5ebeea8be041ba532bd10900b625fbe8bb"
+      },
+      {
+        "name": "APRHO",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/APRHO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5ea2185921f6ef2b7d33965d9330ee0e7ac4e6005d114734744c93faae132700"
+      },
+      {
+        "name": "UK1R",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/Uk1R.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=643c072a75734edce0c44e3affba23a62a8b68561d6d95d883a19d663fded9a8"
+      },
+      {
+        "name": "ANDORYUUU",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/navi/ANDORYUU.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=32391e1899eb19f2c94e98c3deb8f0a09a1e643feea0e0a102a86df8e291f0d2"
+      }
+    ]
+  },
+  {
+    "team": "ONIC",
+    "players": [
+      {
+        "name": "COACH ADI",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/ADI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T043603Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a947373ea755768f782684e938b4278005a4af2ec9fc8e462c277c432b5ccf97"
+      },
+      {
+        "name": "CW",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/CW.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T043603Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=f9d4923a8625c2563bf0cc06a3e95da9b3a27f8f11545cefe37ddd6062d65830"
+      },
+      {
+        "name": "GEM",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/GEM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T043603Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=3f9e7099f4abfd9d133c287979c9ba3740daa47771d62d303a2b041f8f390c7d"
+      },
+      {
+        "name": "KIBOY",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/KIBOY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=98fab43211c14ed1e639395cb7ea1bb8583d0146ae132bb4f5d0eec7f6c3ad49"
+      },
+      {
+        "name": "SANZ",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/SANZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=df88b7ee8d8b8d798c535c6971630194174b4d7f2a09b6056060746a83dacd19"
+      },
+      {
+        "name": "KAIRI",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/KAIRI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=39c4e9eab8579dda020a8f84a2f2cf5bf943c0d3c0a9fdad2547d67040419816"
+      },
+      {
+        "name": "LUTPIII",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/Lutpii.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002053Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=647b92158d35f1466c638991e32a7d90c596462711afd212164b1b3afe029d10"
+      },
+      {
+        "name": "SAVERO",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/SAVERO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T004950Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5ec0b2ddf7501484b542001077283e7ff3a81433b3d008811c81978f5e1cd932"
+      },
+      {
+        "name": "SKYLAR",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/onic/SKYLAR.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002052Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=9cafe1a1bb40a844c71f08ea1f2fce52a44dd7bd47833a1ee550016f8fb834a4"
+      }
+    ]
+  },
+  {
+    "team": "RRQ",
+    "players": [
+      {
+        "name": "KHEZCUTE",
+        "role": "COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/KHEZCUTE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002551Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=123e32c2f6ec803293d54d0448dd2397afe9f4efb80a0b61e2c5fda9f7cb8fd0"
+      },
+      {
+        "name": "RAVE",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/RAVE.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002551Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=0de348ff5cedefeb03ea4b085f5fb395f75f1b63e2f33f4f3669f6283fc2bcd9"
+      },
+      {
+        "name": "NMM",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/NMM.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002551Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=fc9e346692d78a84915450bf0ecc88068af4986f5b0b20be1fcf5896858bdcef"
+      },
+      {
+        "name": "TOYY",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/TOYY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=3df74cd31aae2491324c1eb59e110fdc0f8e4b8e24bdfffb8fb084e3ef558c52"
+      },
+      {
+        "name": "DYRENNN",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/DYRENNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T011135Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b2f284850fc2c0e8573d683faddc453565bb5999c0584ff5ddb15927cc7cac0c"
+      },
+      {
+        "name": "RINZ",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/RINZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=fbfc0bed6713737aea2b34364e08579c0ec2c1d1175d70587a359061d694fbac"
+      },
+      {
+        "name": "IDOK",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/IDOK.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=21c9e7cde3a25498a1c8bcba221c7d115917ab3a1efc2f572a569111e9644884"
+      },
+      {
+        "name": "REZZZ",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/REZZZ.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5049d9b860f7b84498531ab8fa205698e0217356b769c8fedf39c17db0b2f9eb"
+      },
+      {
+        "name": "SUTSUJIN",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/SUTSUJIN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T011135Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=93c704c92e0a4c273b5481746b543f22219fbb3589f955ec3cd3c7e5d9c49912"
+      },
+      {
+        "name": "ZUNESH",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/ZUNESH.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T011135Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=a851b4b1c9a5e70e4c35d40d1c7bf6d84720c65e7bfec95a0659d61d95a55866"
+      },
+      {
+        "name": "FERXIIC",
+        "role": "JUNGLER",
+        "image": "https://cdn.id-mpl.com/season16/player/rrq/Ferxicc.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T002551Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=5c82e2f27426d8737de637691ac77b01501ed4ed5116243540d1f4a811476a42"
+      }
+    ]
+  },
+  {
+    "team": "TLID",
+    "players": [
+      {
+        "name": "PAHLEVI",
+        "role": "AST. COACH",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/PAHLEVI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T060412Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=24720ae0452457d381c040090d150b4b65185f680b61f5ca63590084b8a55207"
+      },
+      {
+        "name": "FACEHUGGER",
+        "role": "ANALYST",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/FACEHUGGER.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T060412Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=3b9881f4362e23050648c4e942e2f2c54c0f4f9b32c6f32646ec8ada62bda568"
+      },
+      {
+        "name": "ARAN",
+        "role": "EXP LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/ARAN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=c5dc585eb5c9f5e64d536f79a502b006111ebda89f2021cd07d9189c34e57ab4"
+      },
+      {
+        "name": "WIDY",
+        "role": "ROAM",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/WIDY.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=ee599044c5d3c69058e642402ae20fbcbc906c47dce3efe4b68fa34e6c14b0af"
+      },
+      {
+        "name": "YEHEZKIEL",
+        "role": "MID LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/YEHEZKIEL.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=202c49450d4885b27f8ee29124108c816808104fb803362da6ec6d0c6a4f9049"
+      },
+      {
+        "name": "KYOU",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/KYOU.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T014624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=39e920fdafd9599ef28463aa98c4c4de4919fe121644f9dc5d3a0758785c7237"
+      },
+      {
+        "name": "KABUKI",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/KABUKI.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010057Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=72fe9705f0a9a10b0cf2bda7664056a636ffd4f85661379fec73b49c156b8221"
+      },
+      {
+        "name": "JOOOO",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/JOOOO.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T010056Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b0023d4ce88b8923666547ce00c7d07ef50056a509e466b7120f4eec3ae7bd06"
+      },
+      {
+        "name": "AERONNSHIKII",
+        "role": "GOLD LANE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/AERONNSHIKII.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T060412Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=00dedc312521389e9c7931059facb1af26db57ef87e588030cdb42d38922df80"
+      },
+      {
+        "name": "FAVIANNN",
+        "role": "JUNGLE",
+        "image": "https://cdn.id-mpl.com/season16/player/tlid/FAVIANNN.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20251202%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20251202T014624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=69d5649886029c878b6dde811ba852418d45c67be0a58ba8054b3678f64961f5"
+      }
+    ]
+  }
+]

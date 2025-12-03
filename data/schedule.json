@@ -1,0 +1,2054 @@
+{
+  "regular": [
+    {
+      "date": "Jumat, 22 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 22 Agustus 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 22 Agustus 2025",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 23 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 23 Agustus 2025",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 23 Agustus 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 23 Agustus 2025",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 24 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 24 Agustus 2025",
+      "team1": "BTR",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 24 Agustus 2025",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 24 Agustus 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 29 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 29 Agustus 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 29 Agustus 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 30 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 30 Agustus 2025",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 30 Agustus 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 30 Agustus 2025",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 31 Agustus 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 31 Agustus 2025",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 31 Agustus 2025",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 31 Agustus 2025",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 5 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 5 September 2025",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "RRQ",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 5 September 2025",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 6 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 6 September 2025",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 6 September 2025",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 6 September 2025",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 7 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 7 September 2025",
+      "team1": "DEWA",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 7 September 2025",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 7 September 2025",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 12 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 12 September 2025",
+      "team1": "NAVI",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 12 September 2025",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 13 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 13 September 2025",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 13 September 2025",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 13 September 2025",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 14 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 14 September 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 14 September 2025",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 14 September 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 19 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 19 September 2025",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 19 September 2025",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 20 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 20 September 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 20 September 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 20 September 2025",
+      "team1": "EVOS",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 21 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 21 September 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 21 September 2025",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 21 September 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 26 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 26 September 2025",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 26 September 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 27 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 27 September 2025",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 27 September 2025",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 27 September 2025",
+      "team1": "RRQ",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 28 September 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 28 September 2025",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 28 September 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 28 September 2025",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 3 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 3 Oktober 2025",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 3 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 4 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 4 Oktober 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 4 Oktober 2025",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 4 Oktober 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 5 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 5 Oktober 2025",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 5 Oktober 2025",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 5 Oktober 2025",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 10 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 10 Oktober 2025",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 10 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 11 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 11 Oktober 2025",
+      "team1": "GEEK",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 11 Oktober 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 11 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 12 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 12 Oktober 2025",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 12 Oktober 2025",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 12 Oktober 2025",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "Jumat, 17 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 17 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "Jumat, 17 Oktober 2025",
+      "team1": "DEWA",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 18 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 18 Oktober 2025",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "Sabtu, 18 Oktober 2025",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "Sabtu, 18 Oktober 2025",
+      "team1": "ONIC",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "Minggu, 19 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 19 Oktober 2025",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "14:15"
+    },
+    {
+      "date": "Minggu, 19 Oktober 2025",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "Minggu, 19 Oktober 2025",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "AE",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "RRQ",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "BTR",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "GEEK",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "RRQ",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "EVOS",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "DEWA",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "GEEK",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "RRQ",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "EVOS",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "NAVI",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "BTR",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "ONIC",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "DEWA",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "TLID",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "ONIC",
+      "time": "17:15"
+    },
+    {
+      "date": "",
+      "team1": "NAVI",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "18:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "20:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "15:15"
+    },
+    {
+      "date": "",
+      "team1": "GEEK",
+      "scoreL": "1",
+      "scoreR": "2",
+      "team2": "TLID",
+      "time": "14:15"
+    },
+    {
+      "date": "",
+      "team1": "TLID",
+      "scoreL": "2",
+      "scoreR": "0",
+      "team2": "RRQ",
+      "time": "17:15"
+    }
+  ],
+  "playoffs": [
+    {
+      "date": "Rabu, 29 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Rabu, 29 Oktober 2025",
+      "team1": "AE",
+      "scoreL": "3",
+      "scoreR": "1",
+      "team2": "NAVI",
+      "time": "13:00"
+    },
+    {
+      "date": "Rabu, 29 Oktober 2025",
+      "team1": "EVOS",
+      "scoreL": "3",
+      "scoreR": "2",
+      "team2": "DEWA",
+      "time": "18:15"
+    },
+    {
+      "date": "Kamis, 30 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Kamis, 30 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "1",
+      "scoreR": "3",
+      "team2": "AE",
+      "time": "13:00"
+    },
+    {
+      "date": "Kamis, 30 Oktober 2025",
+      "team1": "ONIC",
+      "scoreL": "3",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "18:15"
+    },
+    {
+      "date": "Jumat, 31 Oktober 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Jumat, 31 Oktober 2025",
+      "team1": "BTR",
+      "scoreL": "0",
+      "scoreR": "3",
+      "team2": "EVOS",
+      "time": "13:00"
+    },
+    {
+      "date": "Jumat, 31 Oktober 2025",
+      "team1": "AE",
+      "scoreL": "2",
+      "scoreR": "3",
+      "team2": "ONIC",
+      "time": "18:15"
+    },
+    {
+      "date": "Sabtu, 1 November 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Sabtu, 1 November 2025",
+      "team1": "AE",
+      "scoreL": "4",
+      "scoreR": "2",
+      "team2": "EVOS",
+      "time": "17:30"
+    },
+    {
+      "date": "Minggu, 2 November 2025",
+      "team1": "",
+      "scoreL": "",
+      "scoreR": "",
+      "team2": "",
+      "time": ""
+    },
+    {
+      "date": "Minggu, 2 November 2025",
+      "team1": "ONIC",
+      "scoreL": "4",
+      "scoreR": "1",
+      "team2": "AE",
+      "time": "17:30"
+    }
+  ]
+}
