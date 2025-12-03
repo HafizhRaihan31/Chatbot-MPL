@@ -33,12 +33,14 @@ if (!process.env.GEMINI_API_KEY) {
 }
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+// GANTI MODEL DI SINI ⬇⬇⬇
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-2.0-flash",
 });
 
 router.post("/", async (req, res) => {
-  const question = req.body.question || req.body.message; // FIX: support 2 nama field
+  const question = req.body.question || req.body.message;
 
   if (!question)
     return res.status(400).json({ error: "Pertanyaan wajib diisi!" });
