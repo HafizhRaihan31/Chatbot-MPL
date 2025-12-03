@@ -12,6 +12,7 @@
     "scrape:all": "npm run scrape:teams && npm run scrape:roster && npm run scrape:schedule && npm run scrape:standings"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0",
     "cors": "^2.8.5",

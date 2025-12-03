@@ -2,6 +2,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import chatRoute from "./routes/chat.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -50,3 +51,6 @@ app.get("/api/teams-detail", (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 API berjalan di port ${PORT}`);
 });
+
+app.use(express.json());
+app.use("/api/chat", chatRoute);
