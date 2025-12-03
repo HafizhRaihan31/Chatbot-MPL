@@ -1,8 +1,11 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import chatRoute from "./routes/chat.js";
+
+dotenv.config(); // WAJIB agar GEMINI_API_KEY terbaca
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,20 +14,23 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware JSON harus sebelum routes
+// Middleware JSON
 app.use(express.json());
 
 // Helper JSON reader
 const readJSON = (filename) => {
-  const filePath = path.join(__dirname, "data", filename);
-  if (!fs.existsSync(filePath)) return null;
-  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  try {
+    const filePath = path.join(__dirname, "data", filename);
+    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  } catch (err) {
+    console.error(`❌ Gagal membaca file ${filename}`, err);
+    return null;
+  }
 };
 
-// API ROUTES =============================
-
+// API ROUTES
 app.get("/", (req, res) => {
-  res.send("MPL Chatbot API is running...");
+  res.send("MPL Chatbot API is running on Railway 🚀");
 });
 
 app.get("/api/schedule", (req, res) => {
@@ -51,10 +57,10 @@ app.get("/api/teams-detail", (req, res) => {
   res.json(data);
 });
 
-// Chatbot Route (HARUS sebelum listen)
+// CHATBOT ROUTE
 app.use("/api/chat", chatRoute);
 
-// Start Server ==========================
+// Start Server
 app.listen(PORT, () => {
   console.log(`🚀 API berjalan di port ${PORT}`);
 });
