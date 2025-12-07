@@ -34,7 +34,7 @@ if (!process.env.GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// GANTI MODEL DI SINI ⬇⬇⬇
+// MODEL (AMAN)
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash",
 });
@@ -66,19 +66,38 @@ router.post("/", async (req, res) => {
     `;
 
     const result = await model.generateContent({
-      contents: [{
-        role: "user",
-        parts: [{ text: context + "\n\nPertanyaan: " + question }]
-      }]
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: context + "\n\nPertanyaan: " + question }],
+        },
+      ],
     });
 
     const text = result.response.text();
-
     res.json({ answer: text });
 
   } catch (err) {
     console.error("❌ Error Chatbot:", err);
-    res.status(500).json({ error: err.message });
+
+    // ERROR KUOTA HABIS (429)
+    if (err.message.includes("429") || err.message.includes("quota")) {
+      return res.status(429).json({
+        error: "Kuota API Gemini habis. Coba lagi nanti."
+      });
+    }
+
+    // MODEL TIDAK TERSEDIA / TIDAK AKTIF (404)
+    if (err.message.includes("404") || err.message.includes("model")) {
+      return res.status(400).json({
+        error: "Model Gemini tidak tersedia atau belum diaktifkan."
+      });
+    }
+
+    // ERROR SERVER UMUM
+    return res.status(500).json({
+      error: "Terjadi kesalahan server. Silakan coba lagi."
+    });
   }
 });
 
