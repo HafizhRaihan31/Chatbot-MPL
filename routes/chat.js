@@ -5,98 +5,128 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const router = Router();
-
-// Fix __dirname untuk folder routes/
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Helper baca file JSON
-function loadJSON(filename) {
-  try {
-    const filePath = path.join(__dirname, "..", "data", filename);
-    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  } catch (err) {
-    console.error(`❌ Gagal load ${filename}`, err);
-    return [];
-  }
+// LOAD JSON SEKALI SAJA (GRATIS, TANPA TOKEN)
+function loadJSON(name) {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, "..", "data", name), "utf8")
+  );
 }
 
-// Load data MPL
 const teams = loadJSON("teams.json");
 const standings = loadJSON("standings.json");
 const schedule = loadJSON("schedule.json");
-const teamsDetail = loadJSON("teams_detail.json");
+const roster = loadJSON("teams_detail.json");
 
-// Setup Gemini
-if (!process.env.GEMINI_API_KEY) {
-  console.error("❌ GEMINI_API_KEY tidak terdeteksi di Railway");
+// SETUP GEMINI (HEMAT TOKEN)
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
+
+
+// ------------------------------------------------------------------
+// FUNGSI PENCARIAN DATA LOKAL (TANPA AI)
+// ------------------------------------------------------------------
+
+function findRoster(team) {
+  const key = Object.keys(roster).find(t =>
+    t.toLowerCase().includes(team.toLowerCase())
+  );
+  return key ? { team: key, players: roster[key] } : null;
 }
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+function findSchedule(team) {
+  return schedule.filter(
+    m =>
+      m.team1.toLowerCase().includes(team.toLowerCase()) ||
+      m.team2.toLowerCase().includes(team.toLowerCase())
+  );
+}
 
-// MODEL (AMAN)
-const model = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash-lite",
-});
+function findStandings(team) {
+  return standings.find(s =>
+    s.team.toLowerCase().includes(team.toLowerCase())
+  );
+}
 
+
+// ------------------------------------------------------------------
+// ROUTE CHAT UTAMA (TOKENS SUPER HEMAT)
+// ------------------------------------------------------------------
 router.post("/", async (req, res) => {
-  const question = req.body.question || req.body.message;
+  const q = (req.body.message || req.body.question || "").trim();
 
-  if (!question)
-    return res.status(400).json({ error: "Pertanyaan wajib diisi!" });
+  if (!q)
+    return res.status(400).json({ error: "Pertanyaan wajib diisi." });
 
+  const lower = q.toLowerCase();
+
+
+  // ================================================================
+  // 1️⃣ PERTANYAAN ROSTER → JAWAB TANPA GEMINI
+  // ================================================================
+  if (lower.includes("roster") || lower.includes("pemain")) {
+    const team = lower.replace("roster", "").replace("pemain", "").trim();
+    const data = findRoster(team);
+
+    if (data) {
+      return res.json({
+        answer: `Berikut roster ${data.team}:\n- ${data.players.join("\n- ")}`
+      });
+    }
+  }
+
+
+  // ================================================================
+  // 2️⃣ PERTANYAAN JADWAL → JAWAB TANPA GEMINI
+  // ================================================================
+  if (lower.includes("jadwal") || lower.includes("kapan")) {
+    const team = lower.replace("jadwal", "").replace("kapan main", "").trim();
+    const matches = findSchedule(team);
+
+    if (matches.length > 0) {
+      return res.json({
+        answer: matches
+          .map(m => `${m.team1} vs ${m.team2} — ${m.date}`)
+          .join("\n")
+      });
+    }
+  }
+
+
+  // ================================================================
+  // 3️⃣ PERTANYAAN KLASEMEN → JAWAB TANPA GEMINI
+  // ================================================================
+  if (lower.includes("peringkat") || lower.includes("klasemen")) {
+    const team = lower.replace("peringkat", "").replace("klasemen", "").trim();
+    const row = findStandings(team);
+
+    if (row) {
+      return res.json({
+        answer: `Peringkat ${row.team}: #${row.rank} (${row.wins}W - ${row.losses}L)`
+      });
+    }
+  }
+
+
+  // ================================================================
+  // 4️⃣ SEMUA PERTANYAAN LAIN → BARU PAKAI GEMINI (HEMAT TOKEN)
+  // ================================================================
   try {
-    const context = `
-      Kamu adalah Chatbot MPL Indonesia.
-
-      DATA TIM:
-      ${JSON.stringify(teams)}
-
-      DATA STANDINGS:
-      ${JSON.stringify(standings)}
-
-      DATA JADWAL:
-      ${JSON.stringify(schedule)}
-
-      DATA ROSTER:
-      ${JSON.stringify(teamsDetail)}
-
-      Jawab pertanyaan user berdasarkan data MPL di atas.
-      Jika data tidak ada, jawab jujur tanpa mengarang.
-    `;
-
-    const result = await model.generateContent({
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: context + "\n\nPertanyaan: " + question }],
-        },
-      ],
-    });
-
-    const text = result.response.text();
-    res.json({ answer: text });
+    const result = await model.generateContent(q);
+    return res.json({ answer: result.response.text() });
 
   } catch (err) {
-    console.error("❌ Error Chatbot:", err);
+    console.error("❌ Gemini Error:", err);
 
-    // ERROR KUOTA HABIS (429)
-    if (err.message.includes("429") || err.message.includes("quota")) {
+    if (err.message.includes("429"))
       return res.status(429).json({
-        error: "Kuota API Gemini habis. Coba lagi nanti."
+        error: "Batas kuota API Gemini habis. Coba lagi besok."
       });
-    }
 
-    // MODEL TIDAK TERSEDIA / TIDAK AKTIF (404)
-    if (err.message.includes("404") || err.message.includes("model")) {
-      return res.status(400).json({
-        error: "Model Gemini tidak tersedia atau belum diaktifkan."
-      });
-    }
-
-    // ERROR SERVER UMUM
     return res.status(500).json({
-      error: "Terjadi kesalahan server. Silakan coba lagi."
+        error: "Terjadi kesalahan server. Silakan coba lagi."
     });
   }
 });
