@@ -1,114 +1,114 @@
 import { Router } from "express";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import axios from "axios";
+import { fileURLToPath } from "url";
 
 const router = Router();
 
 /* =========================
-   PATH FIX
+   LOAD JSON
 ========================= */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/* =========================
-   LOAD JSON SAFE
-========================= */
-function loadJSON(file) {
-  try {
-    const p = path.join(__dirname, "..", "data", file);
-    return JSON.parse(fs.readFileSync(p, "utf-8"));
-  } catch {
-    return [];
-  }
-}
+const loadJSON = (name) =>
+  JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", name)));
 
-const teams = loadJSON("teams.json");
+const teamsDetail = loadJSON("teams_detail.json");
 const standings = loadJSON("standings.json");
 const scheduleRaw = loadJSON("schedule.json");
-const teamsDetail = loadJSON("teams_detail.json");
-
 const schedule = Array.isArray(scheduleRaw)
   ? scheduleRaw
-  : Object.values(scheduleRaw || {}).flat();
+  : Object.values(scheduleRaw).flat();
 
 /* =========================
-   ROLE & SINONIM
+   UTIL
 ========================= */
-const ROLE_ALIASES = {
-  COACH: ["coach", "pelatih"],
-  JUNGLE: ["jungler", "jungle"],
-  GOLD: ["gold", "gold lane", "goldlaner"],
-  MID: ["mid", "mid lane", "midlaner"],
-  EXP: ["exp", "exp lane", "explane"],
-  ROAM: ["roam", "roamer", "support"],
+const clean = (t) =>
+  t.toLowerCase().replace(/[^a-z0-9\s]/g, "").trim();
+
+/* Levenshtein distance (typo tolerance ringan) */
+function distance(a, b) {
+  if (!a || !b) return 99;
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+  for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+      );
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+/* =========================
+   ALIAS
+========================= */
+const TEAM_ALIAS = {
+  AE: ["ae", "alter", "alter ego", "alterego"],
+  RRQ: ["rrq", "rex", "rrq hosh"],
+  ONIC: ["onic", "onic esports"],
+  BTR: ["btr", "bigetron"],
+  EVOS: ["evos"],
+  AURA: ["aura"],
+  GEEK: ["geek"],
+  DEWA: ["dewa"]
+};
+
+const ROLE_ALIAS = {
+  COACH: ["coach", "pelatih", "kepala pelatih"],
+  "AST. COACH": ["assistant coach", "asisten pelatih"],
+  JUNGLE: ["jungler", "jungle", "jg"],
+  MID: ["mid", "midlane", "mid lane"],
+  GOLD: ["gold", "gold lane", "marksman", "mm"],
+  EXP: ["exp", "exp lane"],
+  ROAM: ["roam", "roamer", "support"]
 };
 
 /* =========================
-   HELPER DETECT
+   MATCHER
 ========================= */
-function normalize(text) {
-  return text.toLowerCase();
-}
-
-function detectRole(text) {
-  const t = normalize(text);
-  for (const [role, aliases] of Object.entries(ROLE_ALIASES)) {
-    if (aliases.some(a => t.includes(a))) return role;
+function matchAlias(text, map) {
+  for (const key in map) {
+    for (const a of map[key]) {
+      if (text.includes(a)) return key;
+      if (distance(text, a) <= 1) return key;
+    }
   }
   return null;
 }
 
-function detectTeam(text) {
-  const t = normalize(text);
-  return teams.find(team =>
-    (team.name || team.team || "")
-      .toLowerCase()
-      .includes(t.split(" ").find(w => w.length >= 3))
-  );
-}
-
-function isMPLRelated(text) {
-  const t = normalize(text);
-  return (
-    teams.some(tm => t.includes(tm.name.toLowerCase())) ||
-    Object.values(ROLE_ALIASES).flat().some(r => t.includes(r)) ||
-    t.includes("mpl") ||
-    t.includes("jadwal") ||
-    t.includes("klasemen")
-  );
-}
-
 /* =========================
-   GROQ POLISH (STRICT)
+   GROQ POLISHER (OPTIONAL)
 ========================= */
-async function polishWithGroq(text) {
+async function polish(text) {
   if (!process.env.GROQ_API_KEY) return text;
-
   try {
     const res = await axios.post(
       "https://api.groq.com/openai/v1/chat/completions",
       {
         model: "llama-3.1-8b-instant",
-        temperature: 0.2,
         messages: [
           {
             role: "system",
             content:
-              "Perbaiki bahasa agar natural dan profesional. DILARANG menambah fakta atau informasi baru.",
+              "Perhalus kalimat berikut agar natural dan singkat. Jangan menambah informasi."
           },
-          { role: "user", content: text },
+          { role: "user", content: text }
         ],
+        temperature: 0.2
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       }
     );
-
     return res.data.choices[0].message.content;
   } catch {
     return text;
@@ -116,120 +116,77 @@ async function polishWithGroq(text) {
 }
 
 /* =========================
-   MAIN CHAT
+   MAIN ROUTE
 ========================= */
 router.post("/", async (req, res) => {
-  const message = (req.body.message || "").trim();
-  if (!message) {
-    return res.status(400).json({ error: "Pesan tidak boleh kosong." });
-  }
+  const msg = clean(req.body.message || "");
+  if (!msg) return res.json({ answer: "Pesan kosong." });
 
-  /* ==== OUT OF SCOPE ==== */
-  if (!isMPLRelated(message)) {
+  // 🔒 filter non MPL
+  if (!/(mpl|rrq|onic|alter|btr|evos|jadwal|klasemen|coach|pelatih|jungler|gold|mid|exp|roam)/.test(msg)) {
     return res.json({
-      answer: "Maaf, saya hanya melayani pertanyaan seputar MPL Indonesia.",
+      answer: "Maaf, saya hanya melayani pertanyaan seputar MPL Indonesia."
     });
   }
 
-  const role = detectRole(message);
-  const team = detectTeam(message);
+  const team = matchAlias(msg, TEAM_ALIAS);
+  const role = matchAlias(msg, ROLE_ALIAS);
 
-  /* =========================
-     ROLE / COACH QUERY
-  ========================= */
-  if (role && team) {
-    const detail = teamsDetail.find(d =>
-      d.team?.toLowerCase().includes(team.name.toLowerCase())
+  /* ===== ROLE QUERY ===== */
+  if (team && role) {
+    const t = teamsDetail.find(x => x.team === team);
+    if (!t) return res.json({ answer: "Tim tidak ditemukan." });
+
+    const found = t.players.filter(p =>
+      p.role.toUpperCase().includes(role)
     );
 
-    if (!detail || !Array.isArray(detail.players)) {
+    if (!found.length) {
       return res.json({
-        answer: `Data tim ${team.name} belum tersedia.`,
+        answer: `Data ${role.toLowerCase()} tim ${team} belum tersedia.`
       });
     }
 
-    const players = detail.players.filter(p =>
-      p.role?.toUpperCase().includes(role)
-    );
-
-    if (!players.length) {
-      return res.json({
-        answer: `Data ${role.toLowerCase()} tim ${team.name} belum tersedia.`,
-      });
-    }
-
-    const names = players.map(p => p.name).join(", ");
-    const raw = `Untuk tim ${team.name}, posisi ${role.toLowerCase()} diisi oleh ${names}.`;
-
+    const names = found.map(p => p.name).join(", ");
     return res.json({
-      answer: await polishWithGroq(raw),
+      answer: await polish(`${role} tim ${team} adalah ${names}.`)
     });
   }
 
-  /* =========================
-     ROSTER TEAM
-  ========================= */
-  if (team && message.toLowerCase().includes("pemain")) {
-    const detail = teamsDetail.find(d =>
-      d.team?.toLowerCase().includes(team.name.toLowerCase())
-    );
-
-    if (!detail?.players?.length) {
-      return res.json({
-        answer: `Roster tim ${team.name} belum tersedia.`,
-      });
-    }
-
-    const list = detail.players
-      .map(p => `${p.name} (${p.role})`)
-      .join(", ");
-
-    return res.json({
-      answer: await polishWithGroq(
-        `Roster pemain tim ${team.name} saat ini adalah: ${list}.`
-      ),
-    });
-  }
-
-  /* =========================
-     STANDINGS
-  ========================= */
-  if (message.toLowerCase().includes("klasemen")) {
+  /* ===== KLASMEN ===== */
+  if (msg.includes("klasemen")) {
     const text = standings
       .slice(0, 8)
-      .map((s, i) => `${i + 1}. ${s.team} (${s.points} poin)`)
+      .map((t, i) => `${i + 1}. ${t.team} (${t.points} poin)`)
+      .join("\n");
+    return res.json({ answer: text });
+  }
+
+  /* ===== JADWAL HARI INI ===== */
+  if (msg.includes("jadwal")) {
+    const today = new Date().toLocaleDateString("id-ID");
+    const todayMatches = schedule.filter(
+      m => m.date === today
+    );
+
+    if (!todayMatches.length) {
+      return res.json({
+        answer: "Tidak ada pertandingan MPL hari ini."
+      });
+    }
+
+    const text = todayMatches
+      .map(m => `${m.team1} vs ${m.team2}`)
       .join("\n");
 
     return res.json({
-      answer: await polishWithGroq(
-        `Berikut klasemen MPL Indonesia saat ini:\n${text}`
-      ),
+      answer: `Jadwal MPL hari ini:\n${text}`
     });
   }
 
-  /* =========================
-     SCHEDULE
-  ========================= */
-  if (message.toLowerCase().includes("jadwal")) {
-    const list = schedule.slice(0, 5);
-
-    const text = list
-      .map(m => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`)
-      .join("\n");
-
-    return res.json({
-      answer: await polishWithGroq(
-        `Berikut jadwal pertandingan MPL terdekat:\n${text}`
-      ),
-    });
-  }
-
-  /* =========================
-     FALLBACK (MPL ONLY)
-  ========================= */
   return res.json({
     answer:
-      "Pertanyaan Anda terkait MPL Indonesia, namun saya belum dapat memahaminya dengan baik. Silakan gunakan format seperti: siapa jungler ONIC, siapa coach RRQ, atau jadwal MPL hari ini.",
+      "Format belum dikenali. Contoh:\n• siapa jungler ONIC\n• siapa pelatih Alter Ego\n• jadwal MPL hari ini\n• klasemen MPL"
   });
 });
 
