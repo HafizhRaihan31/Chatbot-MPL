@@ -36,17 +36,17 @@ const schedule = Array.isArray(scheduleRaw)
   : Object.values(scheduleRaw || {}).flat();
 
 // ==========================
-// GEMINI SETUP (FIX UTAMA)
+// GEMINI SETUP (PALING STABIL)
 // ==========================
 if (!process.env.GEMINI_API_KEY) {
-  console.error("❌ GEMINI_API_KEY tidak ditemukan");
+  console.error("❌ GEMINI_API_KEY tidak ditemukan di environment!");
 }
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// 🔥 WAJIB PAKAI -latest (ANTI v1beta)
+// 🔥 MODEL PALING AMAN (ANTI v1beta)
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash-latest",
+  model: "gemini-1.5-pro",
 });
 
 // ==========================
@@ -84,7 +84,7 @@ function buildPrompt(intent, question) {
   return `
 Kamu adalah asisten resmi MPL Indonesia.
 Gunakan DATA berikut jika relevan.
-Jangan mengarang informasi.
+JANGAN mengarang informasi.
 
 DATA:
 ${JSON.stringify(data)}
@@ -152,7 +152,7 @@ router.post("/", async (req, res) => {
   try {
     const prompt = buildPrompt(intent, message);
 
-    // 🔥 CARA PANGGIL BENAR (ANTI v1beta)
+    // 🔥 CARA PANGGIL PALING AMAN
     const result = await model.generateContent(prompt);
     const text = result.response.text();
 
