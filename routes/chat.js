@@ -2,7 +2,6 @@ import { Router } from "express";
 import axios from "axios";
 
 const router = Router();
-
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 router.post("/", async (req, res) => {
@@ -15,37 +14,45 @@ router.post("/", async (req, res) => {
     const response = await axios.post(
       GROQ_URL,
       {
-        model: "llama3-8b-8192",
+        model: "llama-3.1-8b-instant",
         messages: [
           {
             role: "system",
-            content: "Kamu adalah asisten chatbot MPL Indonesia."
+            content: `
+Kamu adalah chatbot resmi MPL Indonesia.
+Jawab selalu dalam bahasa Indonesia.
+Fokus pada topik MPL Indonesia:
+- jadwal pertandingan
+- klasemen
+- tim dan roster
+Jika pertanyaan di luar MPL, jawab singkat dan arahkan ke topik MPL.
+`
           },
           {
             role: "user",
             content: message
           }
         ],
-        temperature: 0.7
+        temperature: 0.4
       },
       {
         headers: {
           Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json"
         },
-        timeout: 15000
+        timeout: 20000
       }
     );
 
-    const answer =
-      response.data.choices?.[0]?.message?.content ||
-      "Tidak ada jawaban.";
-
-    res.json({ answer });
+    res.json({
+      answer: response.data.choices[0].message.content
+    });
 
   } catch (err) {
-    console.error("❌ GROQ error:", err.response?.data || err.message);
-    res.status(500).json({ error: "Groq API error" });
+    console.error("❌ GROQ ERROR:", err.response?.data || err.message);
+    res.status(500).json({
+      error: "Groq API error"
+    });
   }
 });
 
