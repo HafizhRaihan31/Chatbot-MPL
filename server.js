@@ -7,18 +7,17 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(express.json());
 
-// health check
+// health check (Railway)
 app.get("/", (req, res) => {
-  res.status(200).send("OK");
+  res.send("OK");
 });
 
 app.use("/api/chat", chatRoute);
 
-const PORT = process.env.PORT || 8080;
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 API berjalan di port ${PORT}`);
+  console.log("🚀 API berjalan di port", PORT);
 });

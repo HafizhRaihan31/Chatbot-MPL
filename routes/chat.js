@@ -3,8 +3,7 @@ import axios from "axios";
 
 const router = Router();
 
-const GEMINI_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
+const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 router.post("/", async (req, res) => {
   const message = (req.body.message || "").trim();
@@ -14,30 +13,39 @@ router.post("/", async (req, res) => {
 
   try {
     const response = await axios.post(
-      `${GEMINI_URL}?key=${process.env.GEMINI_API_KEY}`,
+      GROQ_URL,
       {
-        contents: [
+        model: "llama3-8b-8192",
+        messages: [
+          {
+            role: "system",
+            content: "Kamu adalah asisten chatbot MPL Indonesia."
+          },
           {
             role: "user",
-            parts: [{ text: message }]
+            content: message
           }
-        ]
+        ],
+        temperature: 0.7
       },
       {
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+          "Content-Type": "application/json"
+        },
         timeout: 15000
       }
     );
 
-    const text =
-      response.data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+    const answer =
+      response.data.choices?.[0]?.message?.content ||
       "Tidak ada jawaban.";
 
-    res.json({ answer: text });
+    res.json({ answer });
 
   } catch (err) {
-    console.error("❌ Gemini REST error:", err.response?.data || err.message);
-    res.status(500).json({ error: "Gemini error" });
+    console.error("❌ GROQ error:", err.response?.data || err.message);
+    res.status(500).json({ error: "Groq API error" });
   }
 });
 
