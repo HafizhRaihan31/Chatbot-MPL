@@ -13,64 +13,79 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /* =========================
-   LOAD JSON FILES
+   LOAD JSON HELPER
 ========================= */
 function loadJSON(filename) {
   try {
-    return JSON.parse(
-      fs.readFileSync(path.join(__dirname, "..", "data", filename), "utf-8")
-    );
+    const filePath = path.join(__dirname, "..", "data", filename);
+    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
   } catch (err) {
     console.error(`❌ Gagal load ${filename}`);
-    return [];
+    return null;
   }
 }
 
-const teams = loadJSON("teams.json");
-const standings = loadJSON("standings.json");
-const schedule = loadJSON("schedule.json");
-const teamsDetail = loadJSON("teams_detail.json");
+/* =========================
+   LOAD DATA
+========================= */
+const teams = loadJSON("teams.json") || [];
+const standings = loadJSON("standings.json") || [];
+const teamsDetail = loadJSON("teams_detail.json") || [];
+
+// 🔥 WAJIB NORMALISASI (ANTI slice error)
+const scheduleRaw = loadJSON("schedule.json") || [];
+const schedule = Array.isArray(scheduleRaw)
+  ? scheduleRaw
+  : Object.values(scheduleRaw).flat();
 
 /* =========================
    INTENT DETECTION
 ========================= */
 function detectIntent(text) {
   const t = text.toLowerCase();
-
   if (t.includes("jadwal")) return "schedule";
   if (t.includes("klasemen")) return "standings";
   if (t.includes("pemain") || t.includes("roster")) return "roster";
-  if (t.includes("coach")) return "coach";
-
   return "general";
 }
 
 /* =========================
-   HELPER
+   TEAM MATCHER
 ========================= */
 function findTeam(text) {
-  return teams.find(t =>
-    (t.name || t.team || "")
-      .toLowerCase()
-      .includes(text.toLowerCase())
+  const t = text.toLowerCase();
+  return teams.find(team =>
+    (team.name || team.team || "").toLowerCase().includes(t)
   );
 }
 
 /* =========================
-   GROQ FALLBACK
+   GROQ FALLBACK (STABIL)
 ========================= */
 async function askGroq(prompt) {
+  if (!process.env.GROQ_API_KEY) {
+    throw new Error("GROQ_API_KEY belum diset");
+  }
+
   const res = await axios.post(
     "https://api.groq.com/openai/v1/chat/completions",
     {
       model: "llama-3.1-8b-instant",
-      messages: [{ role: "user", content: prompt }],
+      messages: [
+        {
+          role: "system",
+          content:
+            "Kamu adalah chatbot resmi MPL Indonesia. Jawab singkat, faktual, dan profesional."
+        },
+        { role: "user", content: prompt }
+      ],
+      temperature: 0.2
     },
     {
       headers: {
         Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json",
-      },
+        "Content-Type": "application/json"
+      }
     }
   );
 
@@ -89,86 +104,66 @@ router.post("/", async (req, res) => {
 
     const intent = detectIntent(message);
 
-    /* ===== ROSTER ===== */
+    /* ===== JADWAL (JSON ONLY) ===== */
+    if (intent === "schedule") {
+      if (!schedule.length) {
+        return res.json({ answer: "Data jadwal belum tersedia." });
+      }
+
+      const list = schedule.slice(0, 5).map(
+        m => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`
+      );
+
+      return res.json({ answer: list.join("\n") });
+    }
+
+    /* ===== KLASMEN (JSON ONLY) ===== */
+    if (intent === "standings") {
+      if (!standings.length) {
+        return res.json({ answer: "Data klasemen belum tersedia." });
+      }
+
+      const list = standings.slice(0, 8).map(
+        (t, i) => `${i + 1}. ${t.team} (${t.points || "-"})`
+      );
+
+      return res.json({ answer: list.join("\n") });
+    }
+
+    /* ===== ROSTER (JSON ONLY) ===== */
     if (intent === "roster") {
       const team = findTeam(message);
-      if (team) {
-        const detail = teamsDetail.find(t =>
-          (t.team || "").toLowerCase().includes(team.name.toLowerCase())
-        );
-
-        if (detail?.players?.length) {
-          const players = detail.players
-            .map(p => `${p.name} (${p.role})`)
-            .join(", ");
-
-          return res.json({
-            answer: `Roster ${team.name}: ${players}`,
-          });
-        }
+      if (!team) {
+        return res.json({ answer: "Tim tidak ditemukan." });
       }
-    }
 
-    /* ===== COACH ===== */
-    if (intent === "coach") {
-      const team = findTeam(message);
-      if (team) {
-        const detail = teamsDetail.find(t =>
-          (t.team || "").toLowerCase().includes(team.name.toLowerCase())
-        );
+      const roster = teamsDetail.find(
+        t =>
+          (t.team || "").toLowerCase() === team.name.toLowerCase()
+      );
 
-        if (detail?.coach) {
-          return res.json({
-            answer: `Coach ${team.name} adalah ${detail.coach}`,
-          });
-        }
+      if (!roster || !roster.players?.length) {
+        return res.json({ answer: `Roster ${team.name} belum tersedia.` });
       }
-    }
 
-    /* ===== SCHEDULE ===== */
-    if (intent === "schedule") {
-      const team = findTeam(message);
-      const list = team
-        ? schedule.filter(m =>
-            `${m.team1} ${m.team2}`
-              .toLowerCase()
-              .includes(team.name.toLowerCase())
-          )
-        : schedule.slice(0, 5);
+      const players = roster.players
+        .map(p => `${p.name} (${p.role || "-"})`)
+        .join(", ");
 
-      if (list.length) {
-        return res.json({
-          answer: list
-            .map(m => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`)
-            .join("\n"),
-        });
-      }
-    }
-
-    /* ===== STANDINGS ===== */
-    if (intent === "standings" && standings.length) {
       return res.json({
-        answer: standings
-          .slice(0, 8)
-          .map((t, i) => `${i + 1}. ${t.team} (${t.points} pts)`)
-          .join("\n"),
+        answer: `Roster ${team.name}: ${players}`
       });
     }
 
-    /* ===== GROQ FALLBACK ===== */
-    const groqAnswer = await askGroq(
-      `Kamu adalah chatbot resmi MPL Indonesia.
-Jawab singkat dan sopan.
-
-Pertanyaan:
-${message}`
-    );
-
-    return res.json({ answer: groqAnswer });
+    /* ===== FALLBACK KE GROQ ===== */
+    const aiAnswer = await askGroq(message);
+    return res.json({ answer: aiAnswer });
 
   } catch (err) {
-    console.error("❌ Chat error:", err.response?.data || err.message);
-    return res.status(500).json({ error: "Groq API error" });
+    console.error("❌ Chat error:", err.message);
+    return res.status(500).json({
+      error: "Internal Server Error"
+    });
   }
 });
 
