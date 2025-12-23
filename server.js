@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { fileURLToPath } from "url";
-import path from "path";
 import chatRoute from "./routes/chat.js";
 
 dotenv.config();
@@ -16,10 +14,10 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // ==========================
-// HEALTH CHECK (WAJIB RAILWAY)
+// HEALTH CHECK (WAJIB)
 // ==========================
 app.get("/", (req, res) => {
-  res.send("MPL Chatbot API is running 🚀");
+  res.status(200).send("OK");
 });
 
 // ==========================
@@ -28,18 +26,19 @@ app.get("/", (req, res) => {
 app.use("/api/chat", chatRoute);
 
 // ==========================
-// PORT (WAJIB DARI ENV)
+// PORT (WAJIB DARI RAILWAY)
 // ==========================
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+// 🔥 PENTING: bind ke 0.0.0.0
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 API berjalan di port ${PORT}`);
 });
 
 // ==========================
-// GRACEFUL SHUTDOWN (AMAN)
+// GRACEFUL SHUTDOWN
 // ==========================
 process.on("SIGTERM", () => {
-  console.log("⛔ SIGTERM diterima, server dimatikan dengan aman");
+  console.log("⛔ SIGTERM diterima, shutdown aman");
   process.exit(0);
 });
