@@ -14,7 +14,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // ==========================
-// HEALTH CHECK (WAJIB)
+// HEALTH CHECK (WAJIB RAILWAY)
 // ==========================
 app.get("/", (req, res) => {
   res.status(200).send("OK");
@@ -28,17 +28,9 @@ app.use("/api/chat", chatRoute);
 // ==========================
 // PORT (WAJIB DARI RAILWAY)
 // ==========================
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-// 🔥 PENTING: bind ke 0.0.0.0
+// 🔥 WAJIB bind ke 0.0.0.0
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 API berjalan di port ${PORT}`);
-});
-
-// ==========================
-// GRACEFUL SHUTDOWN
-// ==========================
-process.on("SIGTERM", () => {
-  console.log("⛔ SIGTERM diterima, shutdown aman");
-  process.exit(0);
 });
