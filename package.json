@@ -1,10 +1,12 @@
 {
-  "name": "backend",
+  "name": "chatbot-mpl-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "Backend Chatbot MPL Indonesia (Express + Gemini)",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
+
     "scrape:teams": "node scraper/scrapeTeams.js",
     "scrape:roster": "node scraper/scrapeTeamDetail.js",
     "scrape:schedule": "node scraper/scrapeSchedule.js",
@@ -16,8 +18,13 @@
     "axios": "^1.6.7",
     "cheerio": "^1.0.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.22.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
     "puppeteer": "^24.31.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
