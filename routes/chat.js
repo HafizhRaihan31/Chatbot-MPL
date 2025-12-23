@@ -93,7 +93,7 @@ function matchAlias(text, map) {
 }
 
 /* =========================
-   GROQ POLISHER (OPTIONAL)
+   GROQ POLISHER
 ========================= */
 async function polish(text) {
   if (!process.env.GROQ_API_KEY) return text;
@@ -187,18 +187,23 @@ router.post("/", async (req, res) => {
     });
   }
 
-  /* ===== KLASMEN (FIXED) ===== */
+  /* ===== KLASMEN (FIX FINAL – TANPA UBAH FLOW) ===== */
   if (msg.includes("klasemen")) {
     const valid = standings.filter(
-      (t) => t.team && t.matchPoint
+      (t) => t.matchPoint
     );
 
     const text = valid
       .slice(0, 8)
-      .map(
-        (t, i) =>
-          `${i + 1}. ${t.team.trim()} (${t.matchPoint.trim()})`
-      )
+      .map((t, i) => {
+        const teamName =
+          t.teamName ||
+          t.team ||
+          t.team_name ||
+          "Tim Tidak Diketahui";
+
+        return `${i + 1}. ${teamName} (${t.matchPoint})`;
+      })
       .join("\n");
 
     return res.json({
