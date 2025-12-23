@@ -6,104 +6,85 @@ import axios from "axios";
 
 const router = Router();
 
-/* ===============================
-   FIX __dirname
-================================ */
+/* =========================
+   PATH FIX
+========================= */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/* ===============================
-   LOAD JSON (AMAN)
-================================ */
-function loadJSON(filename) {
+/* =========================
+   LOAD JSON SAFE
+========================= */
+function loadJSON(file) {
   try {
-    return JSON.parse(
-      fs.readFileSync(path.join(__dirname, "..", "data", filename), "utf-8")
-    );
+    const p = path.join(__dirname, "..", "data", file);
+    return JSON.parse(fs.readFileSync(p, "utf-8"));
   } catch {
     return [];
   }
 }
 
 const teams = loadJSON("teams.json");
-const teamsDetail = loadJSON("teams_detail.json");
 const standings = loadJSON("standings.json");
 const scheduleRaw = loadJSON("schedule.json");
+const teamsDetail = loadJSON("teams_detail.json");
 
 const schedule = Array.isArray(scheduleRaw)
   ? scheduleRaw
   : Object.values(scheduleRaw || {}).flat();
 
-/* ===============================
-   DOMAIN GUARD (ANTI OFF-TOPIC)
-================================ */
-function isMPLRelated(text) {
-  const keywords = [
-    "mpl", "jadwal", "klasemen",
-    "pemain", "roster",
-    "coach", "pelatih",
-    "rrq", "ae", "alter ego",
-    "btr", "bigetron",
-    "evos", "onic", "geek"
-  ];
+/* =========================
+   ROLE & SINONIM
+========================= */
+const ROLE_ALIASES = {
+  COACH: ["coach", "pelatih"],
+  JUNGLE: ["jungler", "jungle"],
+  GOLD: ["gold", "gold lane", "goldlaner"],
+  MID: ["mid", "mid lane", "midlaner"],
+  EXP: ["exp", "exp lane", "explane"],
+  ROAM: ["roam", "roamer", "support"],
+};
 
-  return keywords.some(k => text.toLowerCase().includes(k));
+/* =========================
+   HELPER DETECT
+========================= */
+function normalize(text) {
+  return text.toLowerCase();
 }
 
-/* ===============================
-   INTENT DETECTION (SINONIM)
-================================ */
-function detectIntent(text) {
-  const t = text.toLowerCase();
-
-  if (t.includes("jadwal")) return "schedule";
-  if (t.includes("klasemen")) return "standings";
-  if (t.includes("pemain") || t.includes("roster")) return "roster";
-
-  // 🔥 coach = pelatih
-  if (t.includes("coach") || t.includes("pelatih")) return "coach";
-
-  return "unknown";
-}
-
-/* ===============================
-   NORMALISASI NAMA TIM
-================================ */
-function normalizeTeamName(text) {
-  const map = {
-    "btr": "bigetron",
-    "bigetron": "bigetron",
-    "ae": "alter ego",
-    "alter ego": "alter ego",
-    "rrq": "rrq",
-    "onic": "onic",
-    "evos": "evos",
-    "geek": "geek"
-  };
-
-  const lower = text.toLowerCase();
-  for (const key in map) {
-    if (lower.includes(key)) return map[key];
+function detectRole(text) {
+  const t = normalize(text);
+  for (const [role, aliases] of Object.entries(ROLE_ALIASES)) {
+    if (aliases.some(a => t.includes(a))) return role;
   }
-  return lower;
+  return null;
 }
 
-/* ===============================
-   CARI TIM
-================================ */
-function findTeam(text) {
-  const normalized = normalizeTeamName(text);
-  return teams.find(t =>
-    (t.name || t.team || "").toLowerCase().includes(normalized)
+function detectTeam(text) {
+  const t = normalize(text);
+  return teams.find(team =>
+    (team.name || team.team || "")
+      .toLowerCase()
+      .includes(t.split(" ").find(w => w.length >= 3))
   );
 }
 
-/* ===============================
-   GROQ POLISHER (STRICT MODE)
-================================ */
+function isMPLRelated(text) {
+  const t = normalize(text);
+  return (
+    teams.some(tm => t.includes(tm.name.toLowerCase())) ||
+    Object.values(ROLE_ALIASES).flat().some(r => t.includes(r)) ||
+    t.includes("mpl") ||
+    t.includes("jadwal") ||
+    t.includes("klasemen")
+  );
+}
+
+/* =========================
+   GROQ POLISH (STRICT)
+========================= */
 async function polishWithGroq(text) {
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) return text;
+  if (!process.env.GROQ_API_KEY) return text;
 
   try {
     const res = await axios.post(
@@ -115,123 +96,141 @@ async function polishWithGroq(text) {
           {
             role: "system",
             content:
-              "Tugasmu hanya memperhalus bahasa. DILARANG menambah fakta, nama, atau informasi baru."
+              "Perbaiki bahasa agar natural dan profesional. DILARANG menambah fakta atau informasi baru.",
           },
-          {
-            role: "user",
-            content: text
-          }
-        ]
+          { role: "user", content: text },
+        ],
       },
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json"
-        }
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+          "Content-Type": "application/json",
+        },
       }
     );
 
-    return res.data.choices[0].message.content.trim();
+    return res.data.choices[0].message.content;
   } catch {
     return text;
   }
 }
 
-/* ===============================
-   MAIN ROUTE
-================================ */
+/* =========================
+   MAIN CHAT
+========================= */
 router.post("/", async (req, res) => {
   const message = (req.body.message || "").trim();
-
   if (!message) {
-    return res.json({ answer: "Silakan masukkan pertanyaan." });
+    return res.status(400).json({ error: "Pesan tidak boleh kosong." });
   }
 
-  // 🚫 BLOK PERTANYAAN NON-MPL
+  /* ==== OUT OF SCOPE ==== */
   if (!isMPLRelated(message)) {
     return res.json({
-      answer: "Maaf, saya hanya melayani pertanyaan seputar MPL Indonesia."
+      answer: "Maaf, saya hanya melayani pertanyaan seputar MPL Indonesia.",
     });
   }
 
-  const intent = detectIntent(message);
-  let rawAnswer = "";
+  const role = detectRole(message);
+  const team = detectTeam(message);
 
-  /* ========= ROSTER ========= */
-  if (intent === "roster") {
-    const team = findTeam(message);
-    if (!team) {
-      return res.json({ answer: "Tim tidak ditemukan." });
-    }
-
+  /* =========================
+     ROLE / COACH QUERY
+  ========================= */
+  if (role && team) {
     const detail = teamsDetail.find(d =>
       d.team?.toLowerCase().includes(team.name.toLowerCase())
     );
 
-    if (!detail || !detail.players?.length) {
+    if (!detail || !Array.isArray(detail.players)) {
       return res.json({
-        answer: `Data roster ${team.name} belum tersedia.`
+        answer: `Data tim ${team.name} belum tersedia.`,
       });
     }
 
-    rawAnswer =
-      `Roster ${team.name} saat ini:\n` +
-      detail.players
-        .map(p => `- ${p.name} (${p.role || "pemain"})`)
-        .join("\n");
-  }
+    const players = detail.players.filter(p =>
+      p.role?.toUpperCase().includes(role)
+    );
 
-  /* ========= COACH ========= */
-  else if (intent === "coach") {
-    const team = findTeam(message);
-    if (!team || !team.coach) {
+    if (!players.length) {
       return res.json({
-        answer: "Data coach tim tersebut belum tersedia."
+        answer: `Data ${role.toLowerCase()} tim ${team.name} belum tersedia.`,
       });
     }
 
-    rawAnswer = `Pelatih (coach) tim ${team.name} saat ini adalah ${team.coach}.`;
-  }
+    const names = players.map(p => p.name).join(", ");
+    const raw = `Untuk tim ${team.name}, posisi ${role.toLowerCase()} diisi oleh ${names}.`;
 
-  /* ========= STANDINGS ========= */
-  else if (intent === "standings") {
-    if (!standings.length) {
-      return res.json({ answer: "Data klasemen belum tersedia." });
-    }
-
-    rawAnswer =
-      "Klasemen MPL terbaru:\n" +
-      standings
-        .slice(0, 8)
-        .map((t, i) => `${i + 1}. ${t.team} (${t.points} poin)`)
-        .join("\n");
-  }
-
-  /* ========= SCHEDULE ========= */
-  else if (intent === "schedule") {
-    if (!schedule.length) {
-      return res.json({ answer: "Data jadwal belum tersedia." });
-    }
-
-    rawAnswer =
-      "Jadwal pertandingan MPL terdekat:\n" +
-      schedule
-        .slice(0, 5)
-        .map(m => `- ${m.team1} vs ${m.team2} (${m.date || "TBA"})`)
-        .join("\n");
-  }
-
-  /* ========= UNKNOWN ========= */
-  else {
     return res.json({
-      answer: "Pertanyaan tidak dikenali dalam konteks MPL."
+      answer: await polishWithGroq(raw),
     });
   }
 
-  // ✨ POLISH (TANPA UBAH FAKTA)
-  const finalAnswer = await polishWithGroq(rawAnswer);
+  /* =========================
+     ROSTER TEAM
+  ========================= */
+  if (team && message.toLowerCase().includes("pemain")) {
+    const detail = teamsDetail.find(d =>
+      d.team?.toLowerCase().includes(team.name.toLowerCase())
+    );
 
-  return res.json({ answer: finalAnswer });
+    if (!detail?.players?.length) {
+      return res.json({
+        answer: `Roster tim ${team.name} belum tersedia.`,
+      });
+    }
+
+    const list = detail.players
+      .map(p => `${p.name} (${p.role})`)
+      .join(", ");
+
+    return res.json({
+      answer: await polishWithGroq(
+        `Roster pemain tim ${team.name} saat ini adalah: ${list}.`
+      ),
+    });
+  }
+
+  /* =========================
+     STANDINGS
+  ========================= */
+  if (message.toLowerCase().includes("klasemen")) {
+    const text = standings
+      .slice(0, 8)
+      .map((s, i) => `${i + 1}. ${s.team} (${s.points} poin)`)
+      .join("\n");
+
+    return res.json({
+      answer: await polishWithGroq(
+        `Berikut klasemen MPL Indonesia saat ini:\n${text}`
+      ),
+    });
+  }
+
+  /* =========================
+     SCHEDULE
+  ========================= */
+  if (message.toLowerCase().includes("jadwal")) {
+    const list = schedule.slice(0, 5);
+
+    const text = list
+      .map(m => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`)
+      .join("\n");
+
+    return res.json({
+      answer: await polishWithGroq(
+        `Berikut jadwal pertandingan MPL terdekat:\n${text}`
+      ),
+    });
+  }
+
+  /* =========================
+     FALLBACK (MPL ONLY)
+  ========================= */
+  return res.json({
+    answer:
+      "Pertanyaan Anda terkait MPL Indonesia, namun saya belum dapat memahaminya dengan baik. Silakan gunakan format seperti: siapa jungler ONIC, siapa coach RRQ, atau jadwal MPL hari ini.",
+  });
 });
 
 export default router;
