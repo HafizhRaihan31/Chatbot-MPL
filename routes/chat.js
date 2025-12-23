@@ -13,13 +13,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ==========================
-// LOAD JSON
+// LOAD JSON FILE
 // ==========================
 function loadJSON(filename) {
   try {
     const filePath = path.join(__dirname, "..", "data", filename);
     return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  } catch {
+  } catch (err) {
+    console.error(`❌ Gagal load ${filename}`);
     return [];
   }
 }
@@ -29,12 +30,13 @@ const standings = loadJSON("standings.json");
 const scheduleRaw = loadJSON("schedule.json");
 const teamsDetail = loadJSON("teams_detail.json");
 
+// Normalisasi schedule
 const schedule = Array.isArray(scheduleRaw)
   ? scheduleRaw
   : Object.values(scheduleRaw || {}).flat();
 
 // ==========================
-// GEMINI SETUP (MODEL VALID)
+// GEMINI SETUP (FIX UTAMA)
 // ==========================
 if (!process.env.GEMINI_API_KEY) {
   console.error("❌ GEMINI_API_KEY tidak ditemukan");
@@ -42,8 +44,9 @@ if (!process.env.GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+// 🔥 WAJIB PAKAI -latest (ANTI v1beta)
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-1.5-flash-latest",
 });
 
 // ==========================
@@ -60,26 +63,28 @@ function detectIntent(msg) {
 // ==========================
 // HELPER
 // ==========================
-function findTeam(text) {
+function findTeamFromText(text) {
   return teams.find((t) =>
     (t.name || t.team || "").toLowerCase().includes(text.toLowerCase())
   );
 }
 
 // ==========================
-// PROMPT MINIMAL
+// PROMPT BUILDER (HEMAT TOKEN)
 // ==========================
 function buildPrompt(intent, question) {
   let data = [];
 
   if (intent === "standings") data = standings.slice(0, 8);
   if (intent === "schedule") data = schedule.slice(0, 20);
-  if (intent === "general")
+  if (intent === "general") {
     data = teams.map((t) => t.name || t.team).slice(0, 30);
+  }
 
   return `
-Kamu adalah asisten MPL Indonesia.
-Gunakan DATA jika relevan dan jangan mengarang.
+Kamu adalah asisten resmi MPL Indonesia.
+Gunakan DATA berikut jika relevan.
+Jangan mengarang informasi.
 
 DATA:
 ${JSON.stringify(data)}
@@ -102,43 +107,52 @@ router.post("/", async (req, res) => {
 
   const intent = detectIntent(message);
 
-  // ===== ROSTER (LOCAL) =====
+  // ===== ROSTER (LOCAL, TANPA GEMINI) =====
   if (intent === "roster") {
-    const team = findTeam(message);
-    const roster = teamsDetail.find((t) =>
-      (t.team || "").toLowerCase().includes(team?.name?.toLowerCase())
-    );
+    const team = findTeamFromText(message);
+    if (team) {
+      const roster = teamsDetail.find((t) =>
+        (t.team || "").toLowerCase().includes(team.name.toLowerCase())
+      );
 
-    if (roster?.players?.length) {
-      const players = roster.players
-        .map((p) => `${p.name} (${p.role || "-"})`)
-        .join(", ");
+      if (roster?.players?.length) {
+        const players = roster.players
+          .map((p) => `${p.name} (${p.role || "-"})`)
+          .join(", ");
 
-      return res.json({ answer: `Roster ${team.name}: ${players}` });
+        return res.json({
+          answer: `Roster ${team.name}: ${players}`,
+        });
+      }
     }
   }
 
-  // ===== SCHEDULE (LOCAL) =====
+  // ===== SCHEDULE (LOCAL, TANPA GEMINI) =====
   if (intent === "schedule") {
-    const team = findTeam(message);
+    const team = findTeamFromText(message);
     if (team) {
       const list = schedule.filter((m) =>
         `${m.team1} ${m.team2}`.toLowerCase().includes(team.name.toLowerCase())
       );
 
       if (list.length) {
-        const txt = list
-          .map((m) => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`)
+        const text = list
+          .map(
+            (m) =>
+              `${m.team1} vs ${m.team2} — ${m.date || m.time || "TBA"}`
+          )
           .join("\n");
 
-        return res.json({ answer: txt });
+        return res.json({ answer: text });
       }
     }
   }
 
-  // ===== GEMINI =====
+  // ===== GEMINI (GENERAL / STANDINGS) =====
   try {
     const prompt = buildPrompt(intent, message);
+
+    // 🔥 CARA PANGGIL BENAR (ANTI v1beta)
     const result = await model.generateContent(prompt);
     const text = result.response.text();
 
@@ -148,10 +162,14 @@ router.post("/", async (req, res) => {
     console.error("❌ Gemini error:", err.message);
 
     if (err.message.includes("429")) {
-      return res.status(429).json({ error: "Kuota Gemini habis" });
+      return res.status(429).json({
+        error: "Kuota Gemini habis, coba lagi nanti",
+      });
     }
 
-    return res.status(500).json({ error: "Kesalahan Gemini" });
+    return res.status(500).json({
+      error: "Terjadi kesalahan pada Gemini",
+    });
   }
 });
 
