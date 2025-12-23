@@ -4,7 +4,7 @@ import axios from "axios";
 const router = Router();
 
 const GEMINI_URL =
-  "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent";
+  "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent";
 
 // ==========================
 // MAIN CHAT ENDPOINT
