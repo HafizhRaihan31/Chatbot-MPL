@@ -7,205 +7,181 @@ import { fileURLToPath } from "url";
 
 const router = Router();
 
-// Fix __dirname
+// =============================
+// FIX __dirname
+// =============================
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// -------------------------
+// =============================
 // LOAD JSON DATA
-// -------------------------
+// =============================
 function loadJSON(filename) {
   try {
     const filePath = path.join(__dirname, "..", "data", filename);
     return JSON.parse(fs.readFileSync(filePath, "utf-8"));
   } catch (err) {
     console.error(`❌ Gagal load ${filename}:`, err.message);
-    return null;
+    return [];
   }
 }
 
-const teams = loadJSON("teams.json") || [];
-const standings = loadJSON("standings.json") || [];
-const schedule = loadJSON("schedule.json") || [];
-const teamsDetail = loadJSON("teams_detail.json") || [];
+const teams = loadJSON("teams.json");
+const standings = loadJSON("standings.json");
+const scheduleRaw = loadJSON("schedule.json");
+const teamsDetail = loadJSON("teams_detail.json");
 
-// Normalisasi jadwal → array
+// =============================
+// NORMALISASI JADWAL
+// =============================
 function normalizeSchedule(data) {
   if (Array.isArray(data)) return data;
   if (!data) return [];
-  const collected = [];
-  Object.values(data).forEach((v) => {
-    if (Array.isArray(v)) collected.push(...v);
-  });
-  return collected;
+  return Object.values(data).flat();
 }
 
-const scheduleList = normalizeSchedule(schedule);
+const schedule = normalizeSchedule(scheduleRaw);
 
-// -------------------------
-// GEMINI SETUP
-// -------------------------
+// =============================
+// GEMINI SETUP (WAJIB VALID)
+// =============================
 if (!process.env.GEMINI_API_KEY) {
-  console.error("❌ GEMINI_API_KEY tidak ditemukan!");
+  console.error("❌ GEMINI_API_KEY TIDAK DITEMUKAN");
 }
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// Model paling aman & hemat
+// ⚠️ MODEL RESMI & AMAN
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash-8b",
+  model: "gemini-1.5-flash",
 });
 
-// -------------------------
-// INTENT DETECTION (SANGAT HEMAT TOKEN)
-// -------------------------
+// =============================
+// INTENT DETECTION (HEMAT TOKEN)
+// =============================
 function detectIntent(msg) {
   const t = msg.toLowerCase();
-  if (t.includes("jadwal") || t.includes("main") || t.includes("kapan"))
-    return "schedule";
-  if (t.includes("pemain") || t.includes("roster"))
-    return "roster";
-  if (t.includes("klasemen") || t.includes("standing"))
-    return "standings";
+  if (t.includes("jadwal") || t.includes("kapan")) return "schedule";
+  if (t.includes("roster") || t.includes("pemain")) return "roster";
+  if (t.includes("klasemen")) return "standings";
   return "general";
 }
 
-// -------------------------
-// LOCAL ANSWER (TANPA GEMINI)
-// -------------------------
+// =============================
+// DATA HELPER
+// =============================
+function findTeam(name) {
+  return teams.find((t) =>
+    (t.name || t.team || "").toLowerCase().includes(name.toLowerCase())
+  );
+}
 
-// Cari roster
 function findRoster(teamName) {
-  const list = Array.isArray(teamsDetail) ? teamsDetail : Object.values(teamsDetail);
-  return list.find((t) =>
+  return teamsDetail.find((t) =>
     (t.team || t.name || "").toLowerCase().includes(teamName.toLowerCase())
   );
 }
 
-// Cari jadwal khusus tim
-function findTeamSchedule(teamName) {
-  return scheduleList.filter((m) => {
-    const t1 = (m.team1 || m.home || "").toLowerCase();
-    const t2 = (m.team2 || m.away || "").toLowerCase();
-    return t1.includes(teamName.toLowerCase()) || t2.includes(teamName.toLowerCase());
-  });
+function findSchedule(teamName) {
+  return schedule.filter((m) =>
+    `${m.team1} ${m.team2}`.toLowerCase().includes(teamName.toLowerCase())
+  );
 }
 
-// -------------------------
-// BUILD PROMPT (HEMAT TOKEN)
-// -------------------------
+// =============================
+// PROMPT MINIMAL & AMAN
+// =============================
 function buildPrompt(intent, question) {
   let data = [];
 
-  if (intent === "standings") {
-    data = standings.slice(0, 8); // hanya top 8
-  } else if (intent === "general") {
-    data = teams.map((t) => ({
-      name: t.name || t.team,
-      short: t.slug || t.id,
-    })).slice(0, 40);
-  } else if (intent === "schedule") {
-    data = scheduleList.slice(0, 30); // jadwal kecil saja
-  }
+  if (intent === "standings") data = standings.slice(0, 8);
+  if (intent === "schedule") data = schedule.slice(0, 20);
+  if (intent === "general")
+    data = teams.map((t) => t.name || t.team).slice(0, 30);
 
   return `
-Kamu adalah asisten MPL Indonesia. Gunakan DATA berikut jika relevan.
+Kamu adalah chatbot MPL Indonesia.
+Gunakan DATA berikut bila relevan dan JANGAN mengarang.
+
 DATA:
 ${JSON.stringify(data)}
 
-PERTANYAAN: ${question}
-Jawab singkat, jelas, dan jangan mengarang.
-  `;
+PERTANYAAN:
+${question}
+
+Jawab singkat, jelas, faktual.
+`;
 }
 
-// -------------------------
-// MAIN API ROUTE
-// -------------------------
+// =============================
+// MAIN ROUTE
+// =============================
 router.post("/", async (req, res) => {
-  const question = (req.body.message || req.body.question || "").trim();
-  if (!question) return res.status(400).json({ error: "Pertanyaan wajib diisi!" });
+  const question = (req.body.message || "").trim();
+  if (!question) {
+    return res.status(400).json({ error: "Pertanyaan tidak boleh kosong" });
+  }
 
   const intent = detectIntent(question);
 
-  // -------------------------
-  // 1. ROSTER — Jawab TANPA API
-  // -------------------------
+  // ===== ROSTER TANPA GEMINI =====
   if (intent === "roster") {
-    const foundTeam = teams.find((t) =>
-      question.toLowerCase().includes((t.name || t.team).toLowerCase())
-    );
-
-    if (!foundTeam) {
-      return res.json({
-        answer: "Sebutkan nama timnya, contoh: 'roster RRQ'.",
-      });
+    const team = findTeam(question);
+    if (!team) {
+      return res.json({ answer: "Sebutkan nama timnya, contoh: roster RRQ" });
     }
 
-    const roster = findRoster(foundTeam.name);
-    if (roster) {
+    const roster = findRoster(team.name);
+    if (roster?.players?.length) {
       const players = roster.players
-        ?.map((p) => `${p.name} (${p.role || p.position || "?"})`)
+        .map((p) => `${p.name} (${p.role || "-"})`)
         .join(", ");
 
-      return res.json({
-        answer: `Berikut roster ${foundTeam.name}: ${players}`,
-      });
+      return res.json({ answer: `Roster ${team.name}: ${players}` });
     }
   }
 
-  // -------------------------
-  // 2. JADWAL — Jawab TANPA API
-  // -------------------------
+  // ===== JADWAL TANPA GEMINI =====
   if (intent === "schedule") {
-    const foundTeam = teams.find((t) =>
-      question.toLowerCase().includes((t.name || t.team).toLowerCase())
-    );
-
-    if (foundTeam) {
-      const matches = findTeamSchedule(foundTeam.name);
-
-      if (matches.length > 0) {
-        const formatted = matches
-          .map((m) => `${m.team1} vs ${m.team2} — ${m.date || m.time || "TBA"}`)
+    const team = findTeam(question);
+    if (team) {
+      const list = findSchedule(team.name);
+      if (list.length) {
+        const txt = list
+          .map((m) => `${m.team1} vs ${m.team2} — ${m.date || "TBA"}`)
           .join("\n");
 
-        return res.json({ answer: formatted });
+        return res.json({ answer: txt });
       }
     }
   }
 
-  // -------------------------
-  // 3. BUTUH GEMINI → PROMPT MINIMAL
-  // -------------------------
-  const prompt = buildPrompt(intent, question);
-
+  // ===== GEMINI (GENERAL / STANDINGS) =====
   try {
-    const result = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-    });
+    const prompt = buildPrompt(intent, question);
 
-    const text = result.response?.text?.() || "Maaf, tidak ada jawaban.";
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
 
-    res.json({ answer: text });
+    return res.json({ answer: text });
 
   } catch (err) {
-    console.error("❌ Gemini error:", err);
+    console.error("❌ Gemini error:", err.message);
 
-    const msg = err.message.toLowerCase();
+    if (err.message.includes("404")) {
+      return res.status(500).json({
+        error: "Model Gemini tidak tersedia (cek nama model).",
+      });
+    }
 
-    if (msg.includes("quota") || msg.includes("429") || msg.includes("too many")) {
+    if (err.message.includes("quota") || err.message.includes("429")) {
       return res.status(429).json({
-        error: "Kuota API Gemini habis. Coba lagi nanti.",
-      });
-    }
-    if (msg.includes("not found") || msg.includes("404")) {
-      return res.status(400).json({
-        error: "Model Gemini tidak tersedia pada project ini.",
+        error: "Kuota Gemini habis. Coba lagi nanti.",
       });
     }
 
-    res.status(500).json({
-      error: "Terjadi kesalahan server. Silakan coba lagi.",
+    return res.status(500).json({
+      error: "Kesalahan server Gemini.",
     });
   }
 });
