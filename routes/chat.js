@@ -13,7 +13,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const loadJSON = (name) =>
-  JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", name), "utf-8"));
+  JSON.parse(
+    fs.readFileSync(path.join(__dirname, "..", "data", name), "utf-8")
+  );
 
 const teamsDetail = loadJSON("teams_detail.json");
 const standings = loadJSON("standings.json");
@@ -34,6 +36,7 @@ function distance(a, b) {
   if (!a || !b) return 99;
   const dp = Array.from({ length: a.length + 1 }, (_, i) => [i]);
   for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+
   for (let i = 1; i <= a.length; i++) {
     for (let j = 1; j <= b.length; j++) {
       dp[i][j] = Math.min(
@@ -93,34 +96,45 @@ function matchAlias(text, map) {
 }
 
 /* =========================
-   GROQ POLISHER
+   OPENROUTER POLISHER
 ========================= */
+const POLISH_MODEL =
+  process.env.OPENROUTER_MODEL ||
+  "meta-llama/llama-3.1-8b-instruct";
+
 async function polish(text) {
-  if (!process.env.GROQ_API_KEY) return text;
+  if (!process.env.OPENROUTER_API_KEY) return text;
+
   try {
     const res = await axios.post(
-      "https://api.groq.com/openai/v1/chat/completions",
+      "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "llama-3.1-8b-instant",
+        model: POLISH_MODEL,
         messages: [
           {
             role: "system",
             content:
-              "Perhalus kalimat berikut agar natural dan singkat. Jangan menambah atau mengubah informasi."
+              "Perhalus kalimat berikut agar natural, singkat, dan jelas. " +
+              "JANGAN menambah, mengurangi, atau mengubah informasi."
           },
-          { role: "user", content: text }
+          {
+            role: "user",
+            content: text
+          }
         ],
         temperature: 0.2
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json"
         }
       }
     );
-    return res.data.choices[0].message.content;
-  } catch {
+
+    return res.data?.choices?.[0]?.message?.content || text;
+  } catch (err) {
+    console.error("OpenRouter polish error:", err.response?.data || err.message);
     return text;
   }
 }
@@ -187,11 +201,9 @@ router.post("/", async (req, res) => {
     });
   }
 
-  /* ===== KLASMEN (FIX FINAL – TANPA UBAH FLOW) ===== */
+  /* ===== KLASMEN ===== */
   if (msg.includes("klasemen")) {
-    const valid = standings.filter(
-      (t) => t.matchPoint
-    );
+    const valid = standings.filter((t) => t.matchPoint);
 
     const text = valid
       .slice(0, 8)
@@ -211,7 +223,7 @@ router.post("/", async (req, res) => {
     });
   }
 
-  /* ===== JADWAL HARI INI ===== */
+  /* ===== JADWAL ===== */
   if (msg.includes("jadwal")) {
     const today = new Date().toLocaleDateString("id-ID");
     const todayMatches = schedule.filter(
